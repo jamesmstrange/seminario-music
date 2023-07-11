@@ -1,12 +1,48 @@
-.slide-icon {
-    font-size: 25px;
-    color: #0000ff;
-  }
+h1 {text-align: var(--text-align);
+  text-decoration: var(--text-decoration);
+  color: var(--ion-color-primary-shade);}
   
-  .my-favorite-text-color {
-    color: #ffa500;
-  }
-  
+  .my-favorite-text-color {font-size: var(--my-favorite-font-size);
+    color: var(--my-favorite-color);
+    font-family: var(--font-family);}
+
+    .slide-icon {color: var(--ion-color-primary);}
+
+    .close-icon {font-size: 40px;
+      color: red;
+      display: block;
+      margin-left: auto;
+      margin-right: 10px;
+      margin-top: 10px;}
+
+      .ion-badge {--background: #00ff00;
+        --color: white;
+        --padding-end: 20px;
+        --padding-start: 20px;}
+
+        .ion-badge-2 {--background: #ff0000;
+          --color: white;
+          --padding-end: 20px;
+          --padding-start: 20px;}
+
+          .ion-badge-3 {--background: #00ffff;
+            --color: white;
+            --padding-end: 20px;
+            --padding-start: 20px;}
+
+            .ion-badge-4 {--background: #ff00ff;
+              --color: white;
+              --padding-end: 20px;
+              --padding-start: 20px;}
+
+              .ion-badge-5 {--background: #ffff00;
+                --color: white;
+                --padding-end: 20px;
+                --padding-start: 20px;}
+
+        
+
+  /**
   .my-favorite-text-color-2 {
     color: #ffff00;
   }
@@ -21,20 +57,6 @@
   
   .my-favorite-text-color-5 {
     color: #ff0000;
-  }
-  
-  /** h1 {color: var(--ion-color-primary);} **/
-  
-  p { font-size: var(--my-favorite-font-size);
-  font-family: Calibri;}
+  } **/
   
   /** ion-content {--background: #ff0000;} **/
-
-  .close-icon {
-    font-size: 40px;
-    color: red;
-    display: block;
-    margin-left: auto;
-    margin-right: 10px;
-    margin-top: 10px;
-  }
