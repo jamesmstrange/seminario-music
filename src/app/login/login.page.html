@@ -1,0 +1,88 @@
+<ion-header>
+</ion-header>
+
+<br>
+<div class="ion-text-center">
+  <ion-title class="my-favorite-text-color">
+    <h1> Inicia Sesion </h1>
+  </ion-title>
+</div>
+  
+  <br>
+<ion-content>
+<div class="ion-text-center">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Spotify.png/768px-Spotify.png" />
+  </div>
+  <br>
+  <div>
+      <form [formGroup]="loginForm" (ngSubmit)="loginUser(loginForm.value)">
+
+    <ion-item lines="none">
+      <ion-input label="Email" labelPlacement="floating" placeholder="name@example.com" formControlName="email"></ion-input>
+    </ion-item>
+
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.email">
+        <div *ngIf="(
+          loginForm.get('email')?.hasError(validation.type) && 
+          loginForm.get('email')?.dirty) 
+        ">
+          {{validation.message}}
+        </div>
+      </ng-container>
+    </div>
+
+    <ion-item lines="none">
+      <ion-input type="password" label="Password" labelPlacement="floating" placeholder="*******" formControlName="password"></ion-input>
+    </ion-item>
+
+    <div class="validation-errors">
+      <ng-container *ngFor="let validation of validation_messages.password">
+        <div *ngIf="loginForm.get('password')?.hasError(validation.type) && loginForm.get('password')?.dirty">
+          {{ validation.message }}
+        </div>
+      </ng-container>
+    </div>
+
+    <br> 
+    <ion-button 
+    expand="full"
+    shape="round"
+    color="success"
+    [disabled] = "!loginForm.valid"
+    >
+    Ingresar
+  </ion-button>
+
+  <ion-button
+      expand="full"
+      shape="round"
+      color="success"
+      (click)="goToRegister()"
+      type="submit"
+    >
+      Registrate
+    </ion-button>
+
+    <ion-button
+    expand="full"
+      shape="round"
+      color="primary"
+      (click)="goToFacebook()"
+      type="submit">
+      <ion-icon name="logo-facebook" class="icon"></ion-icon>
+      Inicia sesion con Facebook
+    </ion-button>
+
+    <ion-button
+    expand="full"
+      shape="round"
+      color="danger"
+      (click)="goToGoogle()"
+      type="submit">
+      <ion-icon name="logo-google" class="icon"></ion-icon>
+      Inicia sesion con Google
+    </ion-button>
+  </form>
+  </div>
+</ion-content>

@@ -10,29 +10,33 @@
   [speed]="40000">
  
   <swiper-slide *ngFor="let slide of slides">
-    <h1> {{slide.title}}   <ion-icon class= "slide-icon" name = "{{slide.icon}}"></ion-icon> </h1>
+    <h1> {{slide.title}} </h1>
     <img src = {{slide.img}} />
   <p class="my-favorite-text-color"> {{slide.description}} </p>
+ 
+  <br>
   <ion-list>
+  <h1>Canciones mas escuchadas del 2023 </h1>
     <ion-item>
-      <ion-label> Peliculas </ion-label>
-      <ion-badge class = "ion-badge"> 30k </ion-badge>
+    
+      <ion-label> Bizarrap Music Sessions 53 - Bizarrap y Shakira </ion-label>
+      <ion-badge class = "ion-badge"> #1 </ion-badge>
     </ion-item>
     <ion-item>
-      <ion-label> Musica </ion-label>
-      <ion-badge class = "ion-badge-2"> 50k </ion-badge>
+      <ion-label> Flowers - Miley Cyrus </ion-label>
+      <ion-badge class = "ion-badge-2"> #2 </ion-badge>
     </ion-item>
     <ion-item>
-      <ion-label> Libros </ion-label>
-      <ion-badge class = "ion-badge-3"> 20k </ion-badge>
+      <ion-label> TQG - Shakira y Karol G </ion-label>
+      <ion-badge class = "ion-badge-3"> #3 </ion-badge>
     </ion-item>
     <ion-item>
-      <ion-label> Series </ion-label>
-      <ion-badge class = "ion-badge-4"> 60k </ion-badge>
+      <ion-label> Llylm - Rosalia </ion-label>
+      <ion-badge class = "ion-badge-4"> #4 </ion-badge>
     </ion-item>
     <ion-item>
-      <ion-label> Juegos </ion-label>
-      <ion-badge class = "ion-badge-5"> 15k </ion-badge>
+      <ion-label> Chulo - Bad Gyal </ion-label>
+      <ion-badge class = "ion-badge-5"> #5 </ion-badge>
     </ion-item>
   </ion-list>
 

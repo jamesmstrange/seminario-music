@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { MusicService } from '../services/music.service';
+import { ModalController } from '@ionic/angular';
+import { SongsModalPage } from '../songs-modal/songs-modal.page';
 
 @Component({
   selector: 'app-home',
@@ -6,50 +9,100 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  artists: any;
+  localArtists: any;
+  song = {
+    name: '', 
+    playing: false,
+    preview_url: ''
+  }
+  currentSong: any;
+  newTime: any;
+  albums: any;
+  constructor(private musicServices: MusicService, private modalController: ModalController) {}
 
-  slides = [
-    {
-      title: "Back to the future",
-      img: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2019/01/back_to_the_future_robert_zemeckis.png?fit=1000%2C667&quality=50&strip=all&ssl=1",
-      icon: "beer-outline",
-      description: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen. No sólo sobrevivió 500 años, sino que tambien ingresó como texto de relleno en documentos electrónicos, quedando esencialmente igual al original. Fue popularizado en los 60s con la creación de las hojas , las cuales contenian pasajes de Lorem Ipsum, y más recientemente con software de autoedición, como por ejemplo Aldus PageMaker, el cual incluye versiones de Lorem Ipsum." 
-    },
-    {
-      title: "Nirvana",
-      img: "https://files.lafm.com.co/assets/public/2022-08/nirvana.jpg?VersionId=._0.1VSwg1a8e9gGpfcdMgiYGfxlrv8l",
-      icon: "barbell-outline",
-      description: "Nirvana (Aberdeen, Washington, 1987 – 1994) fue una de las bandas de más corto recorrido y al mismo tiempo de las más influyentes en el rock de finales del siglo XX, precursora, además, del movimiento grunge, sus integrantes fueron Kurt Cobain, Dave Grohl y Krist Novoselic" 
-    },
-    {
-      title: "Titulo Tres",
-      img: "https://www.zooplus.es/magazine/wp-content/uploads/2021/06/Lombrices-en-gatitos.jpg",
-      icon: "beer-outline",
-      description: "Hola soy la explicacion del slide, Hola soy la explicacion del slide" 
-    },
-    {
-      title: "Titulo Tres",
-      img: "https://www.zooplus.es/magazine/wp-content/uploads/2021/06/Lombrices-en-gatitos.jpg",
-      icon: "beer-outline",
-      description: "Hola soy la explicacion del slide, Hola soy la explicacion del slide" 
-    },
+  ionViewDidEnter(){
+    this.musicServices.getArtists().then(lisArtists =>{
+      this.artists = lisArtists;
+      console.log("variable artist", this.artists);
+    })
 
+    this.localArtists = this.musicServices.getArtistsFromJson();
+    console.log(this.localArtists.artists);
+    this.musicServices.getAlbums().then(listAlbums => {
+      this.albums = listAlbums;
+    })
+  }
 
-    {
-      title: "Titulo Tres",
-      img: "https://www.zooplus.es/magazine/wp-content/uploads/2021/06/Lombrices-en-gatitos.jpg",
-      icon: "beer-outline",
-      description: "Hola soy la explicacion del slide, Hola soy la explicacion del slide" 
+  async showSongs(artist:any){
+    //console.log(artist);
+    const songs = await this.musicServices.getArtistsTracks(artist.id);
+    //console.log(songs);
+    const modal = await this.modalController.create(
+      {
+        component: SongsModalPage,
+        componentProps: {
+          songs: songs,
+          artist: artist.name
+        }
+      }
+    );
+    modal.onDidDismiss().then( dataReturned => {
+      this.song = dataReturned.data;
+    });
+    return await modal.present();
+  }
+
+  async showAlbumSongs(album:any){
+    //console.log(artist);
+    const songs = await this.musicServices.getAlbumsTracks(album.id);
+    //console.log(songs);
+    const modal = await this.modalController.create(
+      {
+        component: SongsModalPage,
+        componentProps: {
+          songs: songs,
+          name: album.name
+        }
+      }
+    );
+    modal.onDidDismiss().then( dataReturned => {
+      this.song = dataReturned.data;
+    });
+    return await modal.present();
+  }
+
+  play(){
+    this.currentSong = new Audio(this.song.preview_url);
+    this.currentSong.play();
+    this.currentSong.addEventListener("timeupdate", () => {
+      this.newTime =
+      (1 / this.currentSong.duration) *
+      this.currentSong.currentTime;
+    })
+    this.song.playing = true;
+  }
+
+  pause(){
+    this.currentSong.pause();
+    this.song.playing = false; 
+  }
+
+  parseTime(time = "0.00"){
+    if (time){
+      const partTime = parseInt(time.toString().split(".")[0], 10);
+      let minutes = Math.floor(partTime / 60).toString();
+      if(minutes.length == 1){
+        minutes = "0" + minutes;
+      }
+      let seconds = (partTime % 60 ).toString();
+      if (seconds.length == 1){
+        seconds = "0" + seconds;
+      }
+      return minutes + ":" + seconds
     }
-
-
-
-  ]
-
-
-
-
-
-
-  constructor() {}
-
+    else{
+      return "0:00"
+    }
+  }
 }

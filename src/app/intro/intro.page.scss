@@ -6,8 +6,6 @@ h1 {text-align: var(--text-align);
     color: var(--my-favorite-color);
     font-family: var(--font-family);}
 
-    .slide-icon {color: var(--ion-color-primary);}
-
     .close-icon {font-size: 40px;
       color: red;
       display: block;
@@ -25,7 +23,7 @@ h1 {text-align: var(--text-align);
           --padding-end: 20px;
           --padding-start: 20px;}
 
-          .ion-badge-3 {--background: #00ffff;
+          .ion-badge-3 {--background: #0000ff;
             --color: white;
             --padding-end: 20px;
             --padding-start: 20px;}
@@ -39,24 +37,3 @@ h1 {text-align: var(--text-align);
                 --color: white;
                 --padding-end: 20px;
                 --padding-start: 20px;}
-
-        
-
-  /**
-  .my-favorite-text-color-2 {
-    color: #ffff00;
-  }
-  
-  .my-favorite-text-color-3 {
-    color: #00ff00;
-  }
-  
-  .my-favorite-text-color-4 {
-    color: #0000ff;
-  }
-  
-  .my-favorite-text-color-5 {
-    color: #ff0000;
-  } **/
-  
-  /** ion-content {--background: #ff0000;} **/

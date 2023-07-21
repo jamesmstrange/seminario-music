@@ -11,38 +11,33 @@ export class IntroPage implements OnInit {
 
   slides = [
     {
-      title: "Back to the future",
-      img: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2019/01/back_to_the_future_robert_zemeckis.png?fit=1000%2C667&quality=50&strip=all&ssl=1",
-      icon: "car",
-      description: "El adolescente Marty McFly es amigo de Doc, un científico que ha construido una máquina del tiempo. Cuando los dos prueban el artefacto, un error fortuito hace que Marty llegue a 1955, año en el que sus padres iban al instituto y todavía no se habían conocido. Después de impedir su primer encuentro, Marty deberá conseguir que se conozcan y se enamoren, de lo contrario su existencia no sería posible." 
+      title: "Billie Eilish",
+      img: "https://www.elnacional.cat/enblau/uploads/s1/36/86/91/21/billie-eilish.jpeg",
+      description: "Billie Eilish Pirate Baird O'Connell, conocida simplemente como Billie Eilish, es una cantante y compositora estadounidense. Adquirió fama como artista cuando tenía 13 años, a raíz del sencillo (Ocean Eyes) que se publicó en 2015 en SoundCloud y volvió a lanzarse con un vídeo musical en YouTube en 2016, a la edad de 14 años, lo que la convirtió en un fenómeno viral. En 2017, publicó su EP Don't Smile at Me, producido por su hermano Finneas O'Connell." 
     },
 
     {
-      title: "Nirvana",
-      img: "https://files.lafm.com.co/assets/public/2022-08/nirvana.jpg?VersionId=._0.1VSwg1a8e9gGpfcdMgiYGfxlrv8l",
-      icon: "musical-notes",
-      description: "Nirvana (Aberdeen, Washington, 1987 – 1994) fue una de las bandas de más corto recorrido y al mismo tiempo de las más influyentes en el rock de finales del siglo XX, precursora, además, del movimiento grunge, sus integrantes fueron Kurt Cobain, Dave Grohl y Krist Novoselic" 
+      title: "Nicki Nicole",
+      img: "https://adnpositivo.com/wp-content/uploads/2023/05/nn.jpg",
+      description: "Nicole Denise Cucco, conocida artísticamente como Nicki Nicole, es una cantante, rapera y compositora argentina. En 2019, saltó a la fama con el sencillo (Wapo traketero), logrando obtener millones de reproducciones en YouTube en un corto período de tiempo después de ser publicado." 
     },
 
     {
-      title: "El Principito",
-      img: "https://img2.rtve.es/i/?w=1600&i=1677510955975.jpg",
-      icon: "book",
-      description: "El principito es una narración corta del escritor francés Antoine de Saint-Exupéry. La historia se centra en un pequeño príncipe que realiza una travesía por el universo. En este viaje descubre la extraña forma en que los adultos ven la vida y comprende el valor del amor y la amistad." 
+      title: "The Weeknd",
+      img: "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2016%2F11%2Fthe-weeknd-puma-ignite-evoknit-white-olive-1.jpg?cbr=1&q=90",
+      description: "Abel Makkonen Tesfaye conocido artísticamente como The Weeknd, es un cantante, rapero, compositor y productor discográfico canadiense nacionalizado estadounidense. Conocido por su versatilidad sónica y lirismo oscuro, su música explora el escapismo, el romance y la melancolía, y a menudo se inspira en experiencias personales. Ha recibido numerosos elogios, incluidos cuatro premios Grammy, 20 premios Billboard Music Awards, 17 premios Juno, seis American Music Awards, dos MTV Video Music Awards y nominaciones para un premio de la Academia, un premio Grammy Latino y un premio Primetime Emmy." 
     },
 
     {
-      title: " Malcolm In The Middle",
-      img: "https://m.media-amazon.com/images/I/81DzuM1tooL._RI_.jpg",
-      icon: "basketball",
-      description: "Malcolm es el tercer hijo de una familia particularmente extravagante y extraña. Junto a él viven: el segundo hijo Reese, un chico gamberro que no se ahorra intimidar a los chicos más pequeños; el cuarto hijo Dewie, un niño peculiar del que a menudo se burlan los hermanos Malcolm y Reese; su padre Hal, un hombre muy enamorado de su esposa Lois, una mujer autoritaria que está a cargo de la familia de Malcolm. El hijo mayor, Francis, fue enviado a la escuela militar por los mismos padres debido a su insubordinación." 
+      title: "Taylor Swift",
+      img: "https://www.instyle.com/thmb/Z75zkwmRPwavJ0GR_IMJknzDm10=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/taylor-swift-2023-grammys-e3c15d7e2fdb412fb8f726aad0509500.jpg",
+      description: "Taylor Alison Swift es una cantautora, productora, directora, actriz y empresaria estadounidense. Criada en Wyomissing, se mudó a Nashville a los 14 años para realizar una carrera de música country. Firmó con la compañía discográfica independiente Big Machine Records y se convirtió en la artista más joven contratada por Sony/ATV Music Publishing House. En 2006 lanzó su álbum debut homónimo, que la estableció como una estrella en la música Pop. Our Song, su tercer sencillo, la convirtió en la persona más joven en escribir temas de forma solista e interpretar una canción número uno en la lista de Hot Country Songs." 
     },
 
     {
-      title: "RE 2",
-      img: "https://i0.wp.com/imgs.hipertextual.com/wp-content/uploads/2018/12/Resident-Evil-21-scaled.jpg?fit=2560%2C1321&quality=50&strip=all&ssl=1",
-      icon: "game-controller",
-      description: "Sigue al policía novato Leon S. Kennedy y a la estudiante universitaria Claire Redfield, que se ven atrapados en una apocalíptica epidemia en Racoon City que ha transformado a su población en zombis mortíferos. Remake del clásico Resident Evil 2 de 1998." 
+      title: "Kendrick Lamar",
+      img: "https://www.rollingstone.com/wp-content/uploads/2018/06/rs-kendrick-lamar-8918fd71-18be-4506-b53a-c9f493eed088.jpg",
+      description: "Kendrick Lamar Duckworth es un rapero, compositor y productor discográfico estadounidense. Ha sido aclamado por críticos, músicos y fanáticos por sus vívidas letras y narraciones sobre sus experiencias y problemáticas dentro de la cultura afroamericana y del hip-hop, llegando a ser nombrado (la voz líder de una generación)." 
     }
 
 
@@ -56,7 +51,7 @@ export class IntroPage implements OnInit {
 
 close () {
   this.storage.set("introShow", true);
-this.router.navigateByUrl("/home");
+this.router.navigateByUrl("/menu/home");
 
 }
 
