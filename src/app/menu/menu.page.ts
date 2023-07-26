@@ -29,7 +29,17 @@ export class MenuPage implements OnInit {
     }
 
     goToSupport(){
-      window.open('https://support.spotify.com/co-es/')
+      window.open('https://support.spotify.com/co-es/');
+    }
+
+    goToSettings(){
+      this.NavCtrl.navigateForward('/menu/settings');
+      this.menu.close();
+    }
+
+    goToHome(){
+      this.NavCtrl.navigateRoot("/menu/home");
+      this.menu.close();
     }
 
    }

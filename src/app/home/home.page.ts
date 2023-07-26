@@ -22,13 +22,13 @@ export class HomePage {
   constructor(private musicServices: MusicService, private modalController: ModalController) {}
 
   ionViewDidEnter(){
-    this.musicServices.getArtists().then(lisArtists =>{
-      this.artists = lisArtists;
+    this.musicServices.getArtists().then(listArtists =>{
+      this.artists = listArtists;
       console.log("variable artist", this.artists);
     })
 
     this.localArtists = this.musicServices.getArtistsFromJson();
-    console.log(this.localArtists.artists);
+    this.localArtists = this.localArtists.artists
     this.musicServices.getAlbums().then(listAlbums => {
       this.albums = listAlbums;
     })

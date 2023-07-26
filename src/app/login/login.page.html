@@ -38,7 +38,9 @@
 
     <div class="validation-errors">
       <ng-container *ngFor="let validation of validation_messages.password">
-        <div *ngIf="loginForm.get('password')?.hasError(validation.type) && loginForm.get('password')?.dirty">
+        <div *ngIf="loginForm.get('password')?.hasError(validation.type) && 
+        loginForm.get('password')?.dirty
+        ">
           {{ validation.message }}
         </div>
       </ng-container>
@@ -50,7 +52,7 @@
     shape="round"
     color="success"
     [disabled] = "!loginForm.valid"
-    >
+    type="submit"> 
     Ingresar
   </ion-button>
 
@@ -58,8 +60,7 @@
       expand="full"
       shape="round"
       color="success"
-      (click)="goToRegister()"
-      type="submit"
+      (click)="goToRegister()"   
     >
       Registrate
     </ion-button>

@@ -10,7 +10,12 @@
         </ion-buttons>
       </ion-toolbar>
     </ion-header>
+
     <ion-content>
+      <ion-item (click)="goToHome()">
+        <ion-icon name="home" class="icon"></ion-icon>
+        Inicio
+      </ion-item> 
       <ion-item (click)="introin()">
         <ion-icon name="albums-sharp" class="icon"></ion-icon>
         Intro
@@ -18,6 +23,10 @@
       <ion-item (click)="goToSupport()">
         <ion-icon name="help-sharp" class="icon"></ion-icon>
         Ayuda
+      </ion-item>
+      <ion-item (click)="goToSettings()">
+        <ion-icon name="cog-outline" class="icon"></ion-icon>
+        Ajustes
       </ion-item>
     </ion-content>
     <ion-footer>
